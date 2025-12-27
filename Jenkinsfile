@@ -5,6 +5,9 @@ pipeline {
             label 'AGENT-1'
         }
     } 
+    environment{
+        COURSE = "Jenkins"
+    }
     // This is build section
     stages{
         stage('Build'){
@@ -12,6 +15,7 @@ pipeline {
                 script {
                     """
                     echo "Building"
+                    echo $COURSE
 
                     """
                 }
