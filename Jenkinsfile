@@ -61,7 +61,7 @@ pipeline {
             //     }
             // }
             when { 
-                expression { "$params.DEPLOY" == "true" }
+                expression { "$params.DEPLOY" == "false" }
             }
             steps{
                 script {
