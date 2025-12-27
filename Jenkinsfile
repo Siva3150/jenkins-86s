@@ -1,37 +1,51 @@
 pipeline {
-    // These are pre-build sections
     agent {
         node {
             label 'AGENT-1'
         }
-    }
-     // This is build section
-     stages{
+    } 
+    // This is build section
+    stages{
         stage('Build'){
-            steps{
-             echo "Building"
+            steps {
+                script {
+                    """
+                    echo "Building"
+
+                    """
+                }
             }
         }
         stage('Test'){
             steps{
-                echo "Testing"
+                steps{
+                    """
+                    echo "Testing"
+
+                    """
+                }
             }
         }
         stage('Deploy'){
             steps{
-                echo "Deploying"
+                script {
+                    """
+                    echo "Deplpying"
+
+                    """
+                }
             }
         }
-     }
-     post {
-        always{
-            echo 'I will always say Hello again!'
+        post{
+            always{
+                echo 'I will run always say Hello Again'
+            }
+            success{
+                echo 'I will run if pipeline success'
+            }
+            failure{
+                echo 'I will run if pipeline failure'
+            }
         }
-        success{
-            echo 'I will run if pipeline success'
-        }
-        failure{
-            echo 'I will run if pipeline failure'
-        }
-     }
+    }
 }
