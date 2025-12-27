@@ -1,7 +1,7 @@
 ### Jenkins Setup 
 
 Partition the disk 
-'''
+```
 
 growpart /dev/nvme0n1 4
 
@@ -13,11 +13,11 @@ xfs_growfs /
 xfs_growfs /var
 xfs_growfs /home
 
-'''
+```
 
 Installation commands from Jenkins official doc
 
-'''
+```
 
 sudo curl -o /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -29,7 +29,7 @@ sudo systemctl daemon-reload
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 
-'''
+```
 
 ### Plugins 
 * Stage view
