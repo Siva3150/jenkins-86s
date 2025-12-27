@@ -37,10 +37,11 @@ pipeline {
                 }
             }
         }
-        // This is post-build section
+    }
+          // This is post-build section
         post{
             always{
-                echo 'I will run always say Hello Again'
+                echo 'I will run always say Hello Again!'
             }
             success{
                 echo 'I will run if pipeline success'
@@ -48,6 +49,5 @@ pipeline {
             failure{
                 echo 'I will run if pipeline failure'
             }
-        }
     }
 }
