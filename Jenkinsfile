@@ -5,8 +5,12 @@ pipeline {
             label 'AGENT-1'
         }
     } 
-    environment{
+    environment {
         COURSE = "Jenkins"
+    }
+    options {
+        timeout(time:10, unit:'MINUTES')
+
     }
     // This is build section
     stages{
@@ -16,7 +20,7 @@ pipeline {
                     """
                     echo "Building"
                     echo $COURSE
-                    sleep 10
+                    #sleep 10
 
                     """
                 }
@@ -54,6 +58,9 @@ pipeline {
             }
             failure{
                 echo 'I will run if pipeline failure'
+            }
+            aborted{
+                echo 'Pipeline is aborted'
             }
     }
 }
