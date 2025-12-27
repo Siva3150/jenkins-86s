@@ -1,4 +1,5 @@
 pipeline {
+    // These are pre-build section
     agent {
         node {
             label 'AGENT-1'
@@ -36,6 +37,7 @@ pipeline {
                 }
             }
         }
+        // This is post-build section
         post{
             always{
                 echo 'I will run always say Hello Again'
