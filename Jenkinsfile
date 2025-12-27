@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test'){
             steps{
-                steps{
+                script{
                     """
                     echo "Testing"
 
